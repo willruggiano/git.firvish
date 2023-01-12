@@ -1,0 +1,41 @@
+==============================================================================
+git-firvish                                                        *git-firvish*
+
+vim-fugitive, but using firvish.nvim
+
+                                                                          *:Git*
+:Git[!] {args}
+    Runs an arbitrary git command.
+    If bang ! is given, the |git-firvish-output| buffer is opened.
+
+==============================================================================
+Configuration                                               *git-firvish-config*
+
+See below for configuration options. Configure git-firvish like so:
+
+>
+require("git-firvish").setup {
+  ...
+}
+<
+
+
+                                                         *git-firvish.bang_open*
+bang_open: string (default: vsplit)
+    If and how to open the git-output buffer when the |:Git| command exits.
+    Options are |:edit|, |:vsplit|, |:pedit| and the like.
+
+                                                      *git-firvish.show_headers*
+show_headers: boolean (default: false)
+    Whether to include canonical firvish headers in the |git-firvish-output| buffer.
+
+                                                         *git-firvish.keep_jobs*
+keep_jobs: boolean (default: true)
+    Whether to keep finished jobs around (in the |firvish-jobs| list).
+
+                                                     *git-firvish.open_on_error*
+open_on_error: string
+    If and how to open the |git-firvish-output| buffer when the underlying command fails.
+    Options are |:edit|, |:vsplit|, |:pedit| and the like.
+
+vim:tw=78:ts=8:noet:ft=help:norl:

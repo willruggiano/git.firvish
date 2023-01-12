@@ -19,11 +19,11 @@
         pkgs,
         ...
       }: {
-        apps.default.program = pkgs.writeShellApplication {
+        apps.update-docs.program = pkgs.writeShellApplication {
           name = "update-docs";
           runtimeInputs = with pkgs; [lemmy-help];
           text = ''
-            lemmy-help lua/firvish/extensions/*.lua > doc/git-firvish.txt
+            lemmy-help lua/*.lua > doc/git-firvish.txt
             nvim --headless -c 'helptags doc/' -c q
           '';
         };
